@@ -18,7 +18,7 @@
 	<!-- 包含所有版本的sql文件 -->
 	<include file="versionChgs/changeLogs-1.0.0.sql" relativeToChangelogFile="true" />
 	<include file="versionChgs/changeLogs-1.0.1.sql" relativeToChangelogFile="true" />
-	<include file="../init.sql" relativeToChangelogFile="true" />
+	<include file="init.sql" relativeToChangelogFile="true" />
 	
 	<!-- <includeAll>指定的是changelog的目录，而不是为文件，如： -->
 	<!-- <includeAll path="liquibase/db"/> -->

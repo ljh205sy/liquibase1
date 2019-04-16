@@ -101,13 +101,15 @@
 						<configuration>
 							<!-- 覆盖原有文件 -->
 							<overwrite>true</overwrite>
-							<outputDirectory>${project.build.outputDirectory}</outputDirectory>
+							<!--<outputDirectory>${project.build.outputDirectory}</outputDirectory>-->
+							<!-- 文件输出路径 -->
+							<outputDirectory>${project.build.outputDirectory}/liquibase/</outputDirectory>
 							<!-- 也可以用下面这样的方式（指定相对url的方式指定outputDirectory） <outputDirectory>target/classes</outputDirectory> -->
 							<!-- 待处理的资源定义 -->
 							<resources>
 								<resource>
 									<!-- 指定resources插件处理哪个目录下的资源文件 -->
-									<directory>src/main/resources/${package.environment}</directory>
+									<directory>src/main/resources/liquibase/${package.environment}</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
