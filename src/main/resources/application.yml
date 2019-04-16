@@ -1,0 +1,19 @@
+server:
+  port: 9060
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/liquibase1?useUnicode=true&useSSL=false&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+liquibase:
+  enabled: true
+  change-log: classpath:liquibase/changelog-master.xml
+logging:
+  level:
+    com.vrv.vap: DEBUG
+    root: info
+    org.springframework.cloud.sleuth: DEBUG
