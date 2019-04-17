@@ -29,4 +29,25 @@ BEGIN
     SELECT 'Hello World From a MySql Database!';
 END
 #
--- CALL sayHelloWorld();
+
+--changeset liujinhui:20190413-002 runOnChange:true endDelimiter:#
+DROP FUNCTION IF EXISTS `getChildLst`
+#
+CREATE FUNCTION  `getChildLst`(rootId INT)
+    RETURNS VARCHAR(4000)
+     BEGIN
+      DECLARE sTemp VARCHAR(4000);
+     DECLARE sTempChd VARCHAR(4000);
+   
+     SET sTemp = '$';
+      SET sTempChd =CAST(rootId AS CHAR);
+   
+      WHILE sTempChd IS NOT NULL DO
+        SET sTemp = CONCAT(sTemp,',',sTempChd);
+         SELECT GROUP_CONCAT(guid) INTO sTempChd FROM regionmanager WHERE FIND_IN_SET(upid,sTempChd)>0;
+       END WHILE;
+      RETURN sTemp;
+    END
+#    
+
+
