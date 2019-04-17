@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset liujinhui:3 labels:initsql
+--changeset liujinhui:20190416-001 labels:initsql
 INSERT INTO `tb_conf` (`conf_id`, `conf_enable`, `conf_value`, `conf_time`, `status_update`) VALUES('maxlength',FALSE,'0','2017-10-16 16:56:21',FALSE);
 INSERT INTO `tb_conf` (`conf_id`, `conf_enable`, `conf_value`, `conf_time`, `status_update`) VALUES('minlength',FALSE,'0','2017-10-16 16:56:21',FALSE);
 INSERT INTO `tb_conf` (`conf_id`, `conf_enable`, `conf_value`, `conf_time`, `status_update`) VALUES('numbers',FALSE,'0','2017-10-16 16:56:21',FALSE);
@@ -11,5 +11,5 @@ INSERT INTO `tb_conf` (`conf_id`, `conf_enable`, `conf_value`, `conf_time`, `sta
 alter table tb_conf add index tb_conf_index_name (conf_id);
 
 
---changeset liujinhui:5 dbms:mysql
+--changeset liujinhui:20190416-002 dbms:mysql
 drop index tb_conf_index_name on tb_conf ;
